@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import io
-import GEOparse
+import geoparse
 from organism_normalizer import OrganismNormalizer
 from data_processor import DataProcessor
 from utils import validate_geo_id, create_download_link
