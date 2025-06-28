@@ -1,3 +1,9 @@
+import subprocess
+import importlib.util
+
+# Check if GEOparse is available, otherwise install it
+if importlib.util.find_spec("GEOparse") is None:
+    subprocess.run(["pip", "install", "GEOparse"], check=True)
 import streamlit as st
 import pandas as pd
 import numpy as np
