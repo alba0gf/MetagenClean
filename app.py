@@ -44,7 +44,7 @@ data_processor = get_data_processor()
 def main():
     st.title("🧬 MetagenClean")
     st.markdown("### GEO Metadata and Expression Data Cleaning Tool")
-    st.markdown("Process and clean Gene Expression Omnibus (GEO) datasets with organism normalization and missing data detection.")
+    st.markdown("Process and clean Gene Expression Omnibus '(GEO)' datasets with organism normalization and missing data detection.")
     
     # Sidebar for input options
     st.sidebar.header("Data Input Options")
