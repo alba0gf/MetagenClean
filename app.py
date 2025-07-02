@@ -201,13 +201,13 @@ def display_results():
         # Display metadata with filtering
         display_df = data['metadata'].copy()
         if search_term:
+            import re  # Asegúrate de importar re solo una vez al principio del archivo si ya no está
             display_df = display_df[
                 display_df.astype(str).apply(
-                    lambda x: x.str.contains(search_term, case=False, na=False)
+                    lambda x: x.str.contains(re.escape(search_term), case=False, na=False)
                 ).any(axis=1)
             ]
-        
-        st.dataframe(display_df, use_container_width=True, height=400)
+            st.dataframe(display_df, use_container_width=True, height=400)
         
         # Download button for metadata
         if st.button("Download Metadata as CSV"):
