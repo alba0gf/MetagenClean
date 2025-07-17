@@ -262,7 +262,7 @@ def display_results():
         st.markdown("---")
         st.subheader("💬 Help us improve")
 
-        with st.form("feedback_form"):
+        with st.form("feedback_form_2"):
             st.write("Have feedback or feature requests?")
             feedback = st.text_area("Let us know what worked, what didn't, or what you'd like to see.", height=150)
             submitted = st.form_submit_button("Submit Feedback")
