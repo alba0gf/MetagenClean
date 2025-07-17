@@ -240,8 +240,23 @@ def display_results():
                     file_name="cleaned_expression_data.csv",
                     mime="text/csv"
                 )
+            
         else:
             st.info("No expression data available for this dataset.")
+            
+              # Aquí empieza el formulario de feedback
+        st.markdown("---")
+        st.subheader("💬 Help us improve")
+
+        with st.form("feedback_form"):
+            st.write("Have feedback or feature requests?")
+            feedback = st.text_area("Let us know what worked, what didn't, or what you'd like to see.", height=150)
+            submitted = st.form_submit_button("Submit Feedback")
+            
+            if submitted:
+                with open("feedback_log.txt", "a", encoding="utf-8") as f:
+                    f.write(f"{feedback}\n---\n")
+                st.success("Thanks for your feedback! 🙌")
     
     with tab4:
         st.subheader("Missing Data Report")
